@@ -9,9 +9,12 @@ function gettingIframeContentTest(){
     
     button.addEventListener("click", () => {
         const iframe = document.querySelector("iframe");
-        const doc = iframe.contentWindow.document || iframe.contentDocument;
-
-        errorManager(doc);
+        try {
+            const doc = iframe.contentWindow.document || iframe.contentDocument;   
+            errorManager(doc);
+        } catch (error) {
+            errorManager(error);   
+        }
     });
 }
 
@@ -48,6 +51,7 @@ function onSubmit(userdata){
     [ul_titles, ul_items].forEach(el => {resultsContainer.appendChild(el)});
 
     [resultHr, resultsContainer].forEach(el => {if(!el.classList.contains("show")) el.classList.add("show")});
+    resultsContainer.scrollIntoView();
 
 };
 
@@ -75,7 +79,6 @@ function errorManager(msg){
     
     try {
         p.innerText = msg;
-        p.classList.add("success");
         resultsContainer.innerHTML = "";
         resultsContainer.appendChild(p);
     } catch (error) {
@@ -87,6 +90,8 @@ function errorManager(msg){
     [resultsContainer, resultHr].forEach(el => {
         el.classList.add("show")
     });
+
+    resultsContainer.scrollIntoView();
 
     resultTimeout = setTimeout(() => {
         [resultsContainer, resultHr].forEach(el => {
