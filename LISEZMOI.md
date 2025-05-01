@@ -36,7 +36,7 @@ C’est là que tu réalises vraiment la **puissance des iframes** dans les int�
 - ``Server/`` : Contient notre serveur back-end, la base de données des utilisateurs et le formulaire destiné à être affiché dans l’iframe.  
   * Utilisez la commande pour le lancer: 
   ```sh 
-    cd Server/; npm i; node index.js
+    cd Server/; npm i; node server.js
   ```
 
 Explorez ces dossiers et jetez un œil à mon code (j’espère qu’il est lisible 😅)

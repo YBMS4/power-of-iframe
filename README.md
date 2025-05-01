@@ -34,7 +34,7 @@ That’s when you truly see the **power of iframes** in API integrations.
 - ``Server/``: Contains our back-end server, the user database, and the form that is supposed to be displayed inside the iframe.  
   * Use the command to start the server : 
   ```sh 
-    cd Server/; npm i; node index.js
+    cd Server/; npm i; node server.js
   ```
 
 Explore these directories and check out my code (hope it’s readable 😅)
