@@ -5,10 +5,6 @@ window.addEventListener("load", () => {
 function iframeSizeManager(){
     /** @type {HTMLIFrameElement} */
     const iframe = document.getElementById("api-iframe");
-    // const iframeHeight = iframe.offsetHeight;
-    // iframe.style.height = iframeHeight + "px";
-
-    // console.log(iframeHeight);
 
     window.addEventListener("message", (event) => {
         if(event.data.height) iframe.style.height = event.data.height + 50 + "px";

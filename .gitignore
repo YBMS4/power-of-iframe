@@ -40,3 +40,6 @@ pids/
 # Test reports
 coverage/
 test-output/
+
+# Autres
+linkedInPost.md
