@@ -1,0 +1,16 @@
+{
+  "name": "power-of-iframe",
+  "version": "1.0.0",
+  "description": "This nodeJS server allows to manage the pages it serves to the clients as iframes. (The API)",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon server.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "express": "^5.1.0"
+  }
+}

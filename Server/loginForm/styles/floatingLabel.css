@@ -1,0 +1,143 @@
+.floating-label, .floating-label *{
+    --padding: 15px;
+    --primary: #1a73e8;
+    --secondary: #f1f3f4;
+    
+    --input-bg: rgb(250, 250, 250);
+    --input-focus-bg: rgb(248, 248, 248);
+
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    
+}
+
+@media (prefers-color-scheme: dark) {
+
+    .floating-label, .floating-label *{
+        --primary: #58a6ff;
+        --secondary: #161b22;
+
+        --input-bg: rgb(60, 60, 60);
+        --input-focus-bg: rgb(70, 70, 70);
+    }
+    
+}
+
+.floating-label{
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+}
+
+.floating-label > .label, .floating-label > input{
+    width: fit-content;
+    max-width: 100%;
+    height: fit-content;
+    max-height: 100%;
+    grid-row: 1/-1;
+    grid-column: 1/-1;
+    transition: all 0.2s linear;
+}
+
+.floating-label > input{
+    border: thin solid transparent;
+    border-bottom: thin solid rgba(128, 128, 128, 0.5);
+    box-shadow: 0px 0px 5px transparent;
+    outline: none;
+    font-size: 0.9rem;
+    padding: var(--padding);
+    padding-right: 2rem;
+    width: 100%;
+    height: fit-content;
+    background-color: var(--input-bg);
+    color: var(--foreground);
+}
+
+.floating-label > input::after{
+    content: "Valid";
+    color: lime;
+    display: grid;
+    font-size: 1rem;
+}
+
+.floating-label > input::placeholder{
+    color: transparent;
+}
+
+.floating-label > input:focus, .forced-floating input{
+    transform-origin: bottom;
+    padding-top: 30px;
+}
+
+.floating-label > input:focus{
+    border-bottom-color: var(--primary);
+    caret-color: var(--primary);
+    background-color: var(--input-focus-bg);
+}
+
+.floating-label > .label{
+    display: grid;
+    width: fit-content;
+    height: fit-content;
+    align-items: center;
+    margin-inline: var(--padding);
+    padding-right: 10px;
+    font-size: 1rem;
+    opacity: 0.3;
+    justify-self: start;
+    align-self: center;
+    background-color: transparent;
+    color: var(--foreground);
+    cursor: text;
+    
+}
+
+
+.floating-label::after, .floating-label::before{
+    grid-row: 1/-1;
+    grid-column: 1/-1;
+
+    width: 2rem;
+    height: 2rem;
+    display: grid;
+    place-items: center;
+    font-size: 1rem;
+
+    justify-self: end;
+    align-self: center;
+    background-color: transparent;
+    
+}
+.floating-label::after{
+    display: none;
+    content: "✅";
+    z-index: 2;
+}
+
+.floating-label::before{
+    content: "❌";
+    display: none;
+    z-index: 2;
+}
+
+.floating-label:has(input:focus) > .label, .forced-floating > .label{
+    transform: translateY(-100%);
+    opacity: 0.7;
+    font-size: 0.9rem;
+    padding-bottom: 2px;
+}
+
+.floating-label:has(input:focus) > .label{
+    color: var(--primary);
+}
+
+.floating-label:has(input:valid)::after{
+    display: grid;
+}
+.floating-label:has(input:invalid){
+    display: grid;
+}

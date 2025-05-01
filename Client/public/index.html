@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./styles/style.css">
+    <link rel="stylesheet" href="http://localhost:3000/public/lib/floatingLabel.css">
+    <script src="http://localhost:3000/public/public.script.js" defer></script>
+    <script src="./scripts/script.js" defer></script>
+    <title>App for Testing Iframe</title>
+</head>
+<body>
+    <header>
+        <h1>Power of Iframe Test</h1>
+    </header>
+    <main>
+        <div id="intro">
+            <h2>Explainations</h2>
+            <p>
+                The Form bellow is not hosted on this page but in an <b class="tag">&lt;Iframe&gt;</b> Tag, 
+                and since the source is from a different domain, you can't access it with <code><b>document</b>.<b>querySelector(<span>"iframe"</span>)</b>.<b>contentWindow</b>.<b>document</b></code>
+                in the JS or see its content in the navigator Inspector. <br>
+                Now try opening the inspector you'll notice in the console a Warning message with a <b>cross-orign</b> error, 
+                meaning that you can't access the page in the <b class="tag">&lt;Iframe&gt;</b>'s elements via JS but you can still see them in the inspector.
+            </p>
+        </div>
+
+        <hr>
+        
+        <div id="iframe-container">
+            <iframe id="api-iframe" allowfullscreen src="http://localhost:3000/loginForm" referrerpolicy="origin" width="100%" height="100%" frameborder="0"></iframe>
+        </div>
+
+        <button type="button">Get Iframe Content via JS</button>
+        
+        <hr class="results-hr">
+        
+        <div id="results-container"></div>
+    </main>
+</body>
+</html>
