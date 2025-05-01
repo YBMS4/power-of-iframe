@@ -16,7 +16,8 @@ function gettingIframeContentTest(){
 }
 
 /**
- * **This function is required and should be defined by the client (on this page), it will be used by the "iframe" page provider to send data to this app via "inter-windows communication".**
+ * * **En**: This function is required and must be defined by the client (on this page). It will be used by the "iframe" page provider to send data to this app via inter-window communication.
+ * * **Fr**: Cette fonction est requise et doit être définie par le client (sur cette page). Elle sera utilisée par le fournisseur de la page "iframe" pour envoyer des données à cette application via une communication entre fenêtres.
  * @param {{Firstname: String, Lastname: String, Age: number, Email: String}} userdata - these are the data that the api will provide to this app after their user's login using their platform's login component (the iframe)
  */
 function onSubmit(userdata){
@@ -51,7 +52,8 @@ function onSubmit(userdata){
 };
 
 /**
- * **This function is required and should be defined by the client (on this page), it will be used by the "iframe" page provider to manage Error messages from the our API hosting the Iframe's Page.**
+ * * **En**: This function is required and must be defined by the client (on this page). It will be used by the "iframe" page provider to handle error messages from our API that hosts the iframe's page.
+ * * **Fr**: Cette fonction est requise et doit être définie par le client (sur cette page). Elle sera utilisée par le fournisseur de la page "iframe" pour gérer les messages d’erreur provenant de notre API qui héberge la page de l’iframe.
  * @param {String} errorMsg 
  */
 function onError(errorMsg){
